@@ -8,17 +8,8 @@ import { Keg } from './keg.model';
     <h1>Tap Room</h1>
     <h3>{{currentFocus}}</h3>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
-    <edit-keg [childSelectedKeg] = "masterKegs" (clickSender) = "editButtonClicked($event)"></edit-keg>
-      <div *ngFor = "let newKeg of masterKegs">
-        <h4>{{newKeg.name}}</h4>
-        <div>
-          <ul>
-              <li>{{newKeg.brand}}</li>
-              <li>{{newKeg.price}}</li>
-              <li>{{newKeg.alcohol}}</li>
-         </ul>
-      </div>
-  </div>
+    <edit-keg [childSelectedKeg] = "selectedKeg" (editButtonClickedSender) = "finishedEditing()"></edit-keg>
+    <keg-list [childKegList] = "masterKegs" (clickSender)="editButtonClicked($event)"></keg-list>
   </div>
   `
 
@@ -35,4 +26,9 @@ export class AppComponent{
   editButtonClicked(clickedKeg){
     this.selectedKeg = clickedKeg;
   }
+
+  finishedEditing() {
+    this.selectedKeg = null;
+  }
+
 }
