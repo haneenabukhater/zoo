@@ -5,11 +5,11 @@ import { FormsModule }  from '@angular/forms';
 import { KegListComponent }  from './keg-list.component';
 import { EditKegComponent } from './edit-keg.component';
 import { newKegComponent } from './new-keg.component';
-// import { CompletenessPipe } from './completeness.pipe';
+import { CompletenessPipe } from './completeness.pipe';
 
 @NgModule({
   imports: [ BrowserModule, FormsModule],     //allows us to run conditionals in our components
-  declarations: [ AppComponent, newKegComponent, EditKegComponent, KegListComponent ], //all components that will reside in this module
+  declarations: [ AppComponent, newKegComponent, EditKegComponent, KegListComponent, CompletenessPipe ], //all components that will reside in this module
   bootstrap:    [ AppComponent ]  //minimum required components to run
 })
 
