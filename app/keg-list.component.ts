@@ -1,46 +1,46 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 
 @Component({
-  selector: 'keg-list',
+  selector: 'animal-list',
   template: `
     <select (change)="onChange($event.target.value)">
-       <option value="allKegs" selected="selected">All Kegs</option>
-       <option value="kegsBelowTen">Price is less than $6</option>
-       <option value="kegsAboveTen" >Price is greater than $6</option>
+       <option value="allAnimals" selected="selected">All Animals</option>
+       <option value="animalsBelowTen">Age is less than 2 yrs</option>
+       <option value="animalsAboveTen" >Age is greater than 2 yrs</option>
      </select>
    <ul>
-     <li (click)="(currentKeg)" *ngFor="let currentKeg of childKegList | completeness: filterByPrice">{{currentKeg.name}} {{currentKeg.brand}} {{currentKeg.price}} {{currentKeg.alcohol}} <p [class]="pintAlert(currentKeg)" >{{currentKeg.pints}}</p><br>{{currentKeg.style}}
-       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
-       <button (click)="pintHasBeenSold(currentKeg)">Sell A Pint!</button>
+     <li (click)="(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness: filterByAge">{{currentAnimal.name}} {{currentAnimal.species}} {{currentAnimal.age}} {{currentAnimal.alcohol}} <p [class]="caretakersAlert(currentAnimal)" >{{currentAnimal.caretakers}}</p><br>{{currentAnimal.sex}}
+       <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
+       <button (click)="caretakerHasLeft(currentAnimal)">Caretaker Left!</button>
      </li>
    </ul>
  `
 })
 
-export class KegListComponent {
-  @Input() childKegList: Keg[];
+export class AnimalListComponent {
+  @Input() childAnimalList: Animal[];
   @Output() clickSender = new EventEmitter();
-  filterByPrice: string = "allKegs";
+  filterByAge: string = "allAnimals";
 
-  editButtonHasBeenClicked(kegToEdit: Keg) {
-    this.clickSender.emit(kegToEdit);
+  editButtonHasBeenClicked(animalToEdit: Animal) {
+    this.clickSender.emit(animalToEdit);
   }
 
-  pintHasBeenSold(kegToSellPintsFrom: Keg) {
-    if (kegToSellPintsFrom.pints > 0) {
-      kegToSellPintsFrom.pints = kegToSellPintsFrom.pints - 1;
+  caretakerHasLeft(animalToCaretakersFrom: Animal) {
+    if (animalToCaretakersFrom.caretakers > 0) {
+      animalToCaretakersFrom.caretakers = animalToCaretakersFrom.caretakers - 1;
     }
   }
 
-  pintAlert(currentKeg) {
-    if (currentKeg.pints <= 10) {
+  caretakersAlert(currentAnimal) {
+    if (currentAnimal.caretakers <= 10) {
       return "bg-danger";
     }
   }
   onChange(optionFromMenu) {
-  this.filterByPrice = optionFromMenu;
+  this.filterByAge = optionFromMenu;
 }
 
 

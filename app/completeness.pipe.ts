@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 @Pipe ({
   name: "completeness",
@@ -7,17 +7,17 @@ import { Keg } from './keg.model';
 })
 
 export class CompletenessPipe implements PipeTransform{
-  transform(input: Keg[], priceFilter){
-   var output: Keg[] = [];
-   if(priceFilter === "kegsBelowTen"){
+  transform(input: Animal[], ageFilter){
+   var output: Animal[] = [];
+   if(ageFilter === "animalsBelowTwo"){
      for (var i = 0; i < input.length; i++) {
-       if (input[i].price <= 6) {
+       if (input[i].age <= 2) {
          output.push(input[i]);
        }
       } return output;
-     } else if (priceFilter === "kegsAboveTen"){
+    } else if (ageFilter === "animalsAboveTwo"){
        for(var i = 0; i < input.length; i ++){
-         if (input[i].price >= 7){
+         if (input[i].age >= 3){
            output.push(input[i]);
          }
        }

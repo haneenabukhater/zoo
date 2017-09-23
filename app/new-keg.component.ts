@@ -1,8 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 @Component({
-  selector: 'new-keg',
+  selector: 'new-animal',
   template: `
   <form>
     <div>
@@ -10,35 +10,35 @@ import { Keg } from './keg.model';
      <input #name>
     </div>
     <div>
-      <label>Enter Brand:</label>
-      <input #brand>
+      <label>Enter Species:</label>
+      <input #species>
     </div>
     <div>
-      <label>Enter Price:</label>
-      <input #price type="number" >
+      <label>Enter Age:</label>
+      <input #age type="number" >
     </div>
     <div>
       <label>Enter Alcohol Content:</label>
       <input #alcohol type="number" >
     </div>
-    <p>Select the style</p>
-      <select #style (change)="onChange($event.target.value)">
-         <option value="IPA" selected="selected">IPA</option>
-         <option value="porter">Porter</option>
-         <option value="session">Session</option>
+    <p>Select the sex</p>
+      <select #sex (change)="onChange($event.target.value)">
+         <option value="female" selected="selected">Female</option>
+         <option value="male">Male</option>
+         <option value="other">Other</option>
       </select>
-  
-    <button (click)="submitForm(name.value, brand.value, price.value, alcohol.value, style.value)">Create Keg!</button>
+
+    <button (click)="submitForm(name.value, species.value, age.value, alcohol.value, sex.value)">Create Animal!</button>
   </form>
   `
 })
 
 
-  export class newKegComponent {
-    @Output() newKegSender = new EventEmitter();
+  export class newAnimalComponent {
+    @Output() newAnimalSender = new EventEmitter();
 
-    submitForm(name: string, brand: string, price: number, alcohol: number, style: string){
-      var newKegToAdd: Keg = new Keg (name, brand, price, alcohol, style);
-      this.newKegSender.emit(newKegToAdd);
+    submitForm(name: string, species: string, age: number, alcohol: number, sex: string){
+      var newAnimalToAdd: Animal = new Animal (name, species, age, alcohol, sex);
+      this.newAnimalSender.emit(newAnimalToAdd);
     }
   }

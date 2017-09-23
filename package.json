@@ -42,5 +42,16 @@
     "lite-server": "2.2.2",
     "typescript": "2.2.2",
     "typings": "1.3.2"
-  }
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smayer0926/Taproom.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/smayer0926/Taproom/issues"
+  },
+  "homepage": "https://github.com/smayer0926/Taproom#readme",
+  "description": ""
 }

@@ -3,7 +3,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/smayer0926/Taproom",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -13,5 +13,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7"
-  }
+  },
+  "authors": [
+    "Haneen AbuKhater <abukhater.haneen@gmail.com>"
+  ]
 }

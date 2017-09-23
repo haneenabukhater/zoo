@@ -1,29 +1,29 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 @Pipe ({
-  name: "style",
+  name: "sex",
   pure: false
 })
 
-export class StylePipe implements PipeTransform{
-  transform(input: Keg[], styleFilter){
-   var output: Keg[] = [];
-   if(styleFilter === "IPA"){
+export class SexPipe implements PipeTransform{
+  transform(input: Animal[], sexFilter){
+   var output: Animal[] = [];
+   if(sexFilter === "female"){
      for (var i = 0; i < input.length; i++) {
-       if (input[i].style === "IPA") {
+       if (input[i].sex === "female") {
          output.push(input[i]);
        }
       } return output;
-    } else if (styleFilter === "porter"){
+    } else if (sexFilter === "male"){
        for(var i = 0; i < input.length; i ++){
-         if (input[i].style === "porter"){
+         if (input[i].sex === "male"){
            output.push(input[i]);
          }
        } return output;
-     } else if (styleFilter === "session"){
+     } else if (sexFilter === "other"){
           for(var i = 0; i < input.length; i ++){
-            if (input[i].style === "session"){
+            if (input[i].sex === "o"){
               output.push(input[i]);
             }
           }

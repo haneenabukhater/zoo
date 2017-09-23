@@ -1,34 +1,34 @@
 import { Component } from '@angular/core';
-import { Keg } from './keg.model';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'app-root',
   template: `
     <div class="container">
-    <h1>Tap Room</h1>
+    <h1>Zoo Animals</h1>
     <h3>{{currentFocus}}</h3>
-    <new-keg (newKegSender)="addKeg($event)"></new-keg>
-    <edit-keg [childSelectedKeg] = "selectedKeg" (editButtonClickedSender) = "finishedEditing()"></edit-keg>
-    <keg-list [childKegList] = "masterKegs" (clickSender)="editButtonClicked($event)"></keg-list>
+    <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+    <edit-animal [childSelectedAnimal] = "selectedAnimal" (editButtonClickedSender) = "finishedEditing()"></edit-animal>
+    <animal-list [childAnimalList] = "masterAnimals" (clickSender)="editButtonClicked($event)"></animal-list>
   </div>
   `
 
 })
 export class AppComponent{
-   currentFocus: string = 'Our Kegs';
-   selectedKeg = null;
-   masterKegs: Keg[] = [
+   currentFocus: string = 'Our Animals';
+   selectedAnimal = null;
+   masterAnimals: Animal[] = [
     ];
 
-  addKeg(newKegFromChild: Keg){
-    this.masterKegs.push(newKegFromChild);
+  addAnimal(newAnimalFromChild: Animal){
+    this.masterAnimals.push(newAnimalFromChild);
   }
-  editButtonClicked(clickedKeg){
-    this.selectedKeg = clickedKeg;
+  editButtonClicked(clickedAnimal){
+    this.selectedAnimal = clickedAnimal;
   }
 
   finishedEditing() {
-    this.selectedKeg = null;
+    this.selectedAnimal = null;
   }
 
 }
