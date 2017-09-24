@@ -11,10 +11,16 @@ import { Animal } from './animal.model';
        <option value="animalsAboveTen" >Age is greater than 2 yrs</option>
      </select>
    <ul>
-     <li (click)="(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness: filterByAge">{{currentAnimal.name}} {{currentAnimal.species}} {{currentAnimal.age}} {{currentAnimal.alcohol}} <p [class]="caretakersAlert(currentAnimal)" >{{currentAnimal.caretakers}}</p><br>{{currentAnimal.sex}}
+   <div class="panel panel-default">
+
+
+     <li (click)="(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness: filterByAge"> <div class="panel-heading">{{currentAnimal.name}}</div> <div class="panel-body"> <p><strong>Species: </strong>{{currentAnimal.species}}</p> <p><strong>Age: </strong>{{currentAnimal.age}}</p>  <p><strong>Diet: </strong>{{currentAnimal.diet}}</p> <p><strong>Zoo Location: </strong>{{currentAnimal.zooLocation}}</p><p><strong>Number of Care Takers:</strong></p> <p [class]="caretakersAlert(currentAnimal)" >{{currentAnimal.caretakers}}</p><p> <strong>Sex of the Animal: </strong> </p>{{currentAnimal.sex}} <br>
        <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
-       <button (click)="caretakerHasLeft(currentAnimal)">Caretaker Left!</button>
+       <button (click)="caretakerHasLeft(currentAnimal)">Add Caretaker!</button>
+       </div>
      </li>
+
+     </div>
    </ul>
  `
 })
@@ -30,13 +36,13 @@ export class AnimalListComponent {
 
   caretakerHasLeft(animalToCaretakersFrom: Animal) {
     if (animalToCaretakersFrom.caretakers > 0) {
-      animalToCaretakersFrom.caretakers = animalToCaretakersFrom.caretakers - 1;
+      animalToCaretakersFrom.caretakers = animalToCaretakersFrom.caretakers + 1;
     }
   }
 
   caretakersAlert(currentAnimal) {
     if (currentAnimal.caretakers <= 10) {
-      return "bg-danger";
+      return "bg-info";
     }
   }
   onChange(optionFromMenu) {

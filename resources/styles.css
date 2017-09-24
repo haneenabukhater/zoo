@@ -1,0 +1,9 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

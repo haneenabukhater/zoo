@@ -19,8 +19,8 @@ import { Animal } from './animal.model';
         <input [(ngModel)]="childSelectedAnimal.age" type="number">
       </div>
       <div>
-        <label>Enter Alcohol Content:</label>
-        <input [(ngModel)]="childSelectedAnimal.alcohol" type="number" >
+        <label>Enter Diet Content:</label>
+        <input [(ngModel)]="childSelectedAnimal.diet" >
       </div>
       <button (click)="editButtonClicked()">Edit Animal!</button>
 
