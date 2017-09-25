@@ -55,3 +55,16 @@ Input     | Output
  Filter on Age less than 2 yrs    | Site will show animals less than 2 yrs of age
   Filter on Age more than 2 yrs    | Site will show animals more than 2 yrs of age
  Select button to add more caretakers on existing animal| Site will show the number of caretakers increase as you click the button
+
+ ## Technologies Used
+
+ * _HTML_
+ * _CSS_
+ * _Gulp_
+ * _Bower_
+ * _Angular_
+ * _TypeScript_
+
+ ### License
+
+Copyright &copy; 2017 Haneen Abu-Khater
