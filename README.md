@@ -23,19 +23,19 @@ Zoo Animal Tracker keeps track of your zoo animals and allows some filtering on 
 
 #### <i class="icon-file"></i> Add an Animal to the Zoo
 
-To add an animal to the zoo <i class="icon-folder-open"></i> **Add Animal!** Button at the end of the form.ß
- ![Alt text](/resources/background.jpg?raw=true "background image")
+To add an animal to the zoo <i class="icon-folder-open"></i> **Add Animal!** Button at the end of the form.
+ ![Alt text](/resources/add.png?raw=true "background image")
 
 #### <i class="icon-folder-open"></i> Age Filter
 
 Selecting the age filter will pipe through your existing animals of the zoo based off of the animals age.
 
- <!-- ![Alt text](https://github.com/haneenabu/StartupTracker/blob/master/src/main/resources/public/images/Switch.png) -->
+ ![Alt text](/resources/filter.png?raw=true "filter image")
 
-#### <i class="icon-trash"></i> Add more caretakers
+#### <i class="icon-folder-open"></i> Add more caretakers
 
 After you have added an animal the enter allows you to add more caretakers of the animal by clicking **Add a Caretaker**
-
+![Alt text](/resources/caretaker.png?raw=true "caretakers image")
 
 > **Tip:** User must enter a number for the age decimals or strings will not be accepted
 
