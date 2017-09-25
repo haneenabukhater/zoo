@@ -7,8 +7,8 @@ import { Animal } from './animal.model';
   template: `
     <select (change)="onChange($event.target.value)">
        <option value="allAnimals" selected="selected">All Animals</option>
-       <option value="animalsBelowTen">Age is less than 2 yrs</option>
-       <option value="animalsAboveTen" >Age is greater than 2 yrs</option>
+       <option value="animalsBelowTwo">Age is less than 2 yrs</option>
+       <option value="animalsAboveTwo" >Age is greater than 2 yrs</option>
      </select>
    <ul>
    <div class="col-md-12">
