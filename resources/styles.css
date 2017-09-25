@@ -7,3 +7,25 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+.jumbotron{
+  text-align: center;
+  font-weight: bolder;
+  background-color: inherit;
+}
+.col-md-12{
+  border: 2px solid grey;
+  padding: 5%;
+  margin: 3%;
+  background-color: hsla(22, 100%, 83%, 0.4);
+}
+.panel{
+  max-width: 500px;
+  display: center;
+  hsla(22, 100%, 83%, 0.4)
+}
+/*.panel-heading{
+  background-color: #ffedcc;
+}*/
+li{
+  list-style-type: none;
+}

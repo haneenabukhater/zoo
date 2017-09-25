@@ -11,13 +11,11 @@ import { Animal } from './animal.model';
        <option value="animalsAboveTen" >Age is greater than 2 yrs</option>
      </select>
    <ul>
-   <div class="panel panel-default">
-
-
-     <li (click)="(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness: filterByAge"> <div class="panel-heading">{{currentAnimal.name}}</div> <div class="panel-body"> <p><strong>Species: </strong>{{currentAnimal.species}}</p> <p><strong>Age: </strong>{{currentAnimal.age}}</p>  <p><strong>Diet: </strong>{{currentAnimal.diet}}</p> <p><strong>Zoo Location: </strong>{{currentAnimal.zooLocation}}</p><p><strong>Number of Care Takers:</strong></p> <p [class]="caretakersAlert(currentAnimal)" >{{currentAnimal.caretakers}}</p><p> <strong>Sex of the Animal: </strong> </p>{{currentAnimal.sex}} <br>
+   <div class="col-md-12">
+     <li (click)="(currentAnimal)" *ngFor="let currentAnimal of childAnimalList | completeness: filterByAge">{{currentAnimal.name}} <p><strong>Species: </strong>{{currentAnimal.species}}</p> <p><strong>Age: </strong>{{currentAnimal.age}}</p>  <p><strong>Diet: </strong>{{currentAnimal.diet}}</p> <p><strong>Zoo Location: </strong>{{currentAnimal.zooLocation}}</p><p><strong>Number of Care Takers:</strong></p> <p [class]="caretakersAlert(currentAnimal)" >{{currentAnimal.caretakers}}</p><p> <strong>Sex of the Animal: </strong> </p>{{currentAnimal.sex}}<p> <strong>Zoo Loaction: </strong> </p>{{currentAnimal.zooLocation}} <br>
        <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
        <button (click)="caretakerHasLeft(currentAnimal)">Add Caretaker!</button>
-       </div>
+
      </li>
 
      </div>

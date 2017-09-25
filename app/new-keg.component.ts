@@ -4,7 +4,9 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'new-animal',
   template: `
+  <div class="col-md-12">
     <form>
+    <h3> Add new Zoo Members</h3>
       <div>
        <label>Enter Name:</label>
        <input #name>
@@ -21,7 +23,7 @@ import { Animal } from './animal.model';
         <label>Enter Diet Content:</label>
         <input #diet>
       </div>
-      <p>Select the sex</p>
+      <p><strong>Select the sex: </strong></p>
         <select #sex (change)="onChange($event.target.value)">
            <option value="female" selected="selected">Female</option>
            <option value="male">Male</option>
@@ -32,8 +34,9 @@ import { Animal } from './animal.model';
           <input #zooLocation>
         </div>
       <hr>
-    <button (click)="submitForm(name.value, species.value, age.value, diet.value, sex.value)">Create Animal!</button>
+    <button (click)="submitForm(name.value, species.value, age.value, diet.value, sex.value, zooLocation.value)">Add Animal!</button>
   </form>
+  </div>
   `
 })
 

@@ -5,8 +5,11 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
     <div class="container">
+    <div class="jumbotron">
     <h1>Zoo Animals</h1>
     <h3>{{currentFocus}}</h3>
+    </div>
+
     <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
     <edit-animal [childSelectedAnimal] = "selectedAnimal" (editButtonClickedSender) = "finishedEditing()"></edit-animal>
     <animal-list [childAnimalList] = "masterAnimals" (clickSender)="editButtonClicked($event)"></animal-list>
@@ -15,7 +18,7 @@ import { Animal } from './animal.model';
 
 })
 export class AppComponent{
-   currentFocus: string = 'Our Animals';
+   currentFocus: string = 'Welcome to the Portland Zoo!';
    selectedAnimal = null;
    masterAnimals: Animal[] = [
     ];
